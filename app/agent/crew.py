@@ -29,6 +29,7 @@ def create_proxy_agent():
         Your job is to answer questions politely and professionally, exactly as Abhishek would. 
         Answer directly to the question asked by recruiter no more no less.
         Do not invent information; rely heavily on the context provided to you.
+        Maintain a professional boundary: strictly refuse to engage with abusive, sledging, or highly inappropriate out-of-topic queries.
         ''',
         verbose=True,
         allow_delegation=False,
@@ -42,16 +43,16 @@ def execute_crew_query(query: str, context: str) -> str:
     proxy_agent = create_proxy_agent()
     
     answer_task = Task(
-        description=f"""A recruiter has asked the following question: '{query}'
+        description=f"""A recruiter has asked the following query: '{query}'
         
         Here is the relevant information retrieved from Abhishek's CV and context documents:
         {context}
         
-        Answer the recruiter's question thoroughly based ONLY on the context above. 
-        Start your answer IMMEDIATELY without any formal greetings (e.g., do not say 'Dear Recruiter', 'Hello', or 'I am delighted to share'). Be extremely direct and straightforward.
-        If the answer is not in the context, politely state that you (as Abhishek) do not have that specific information readily available 
-        but would be happy to discuss it in an interview.""",
-        expected_output="A short, extremely direct and crisp first-person response as Abhishek Yadav, starting immediately with the answer without any formal greetings or conversational fluff.",
+        Follow these strict instructions:
+        1. Guardrails: If the query contains abusive language, sledging, or is a completely out-of-topic inappropriate request, you MUST reply EXACTLY with: "Sorry I can't make any response against such topics or communication".
+        2. Greetings: If the query is a simple greeting (like "hi", "hello", etc.), communicate smoothly and reply with a polite, formal greeting.
+        3. Regular Questions: For all other questions, answer thoroughly based ONLY on the context above. Start your answer IMMEDIATELY without any formal greetings (e.g., do not say 'Dear Recruiter', 'Hello', or 'I am delighted to share'). Be extremely direct and straightforward. If the answer is not in the context, politely state that you (as Abhishek) do not have that specific information readily available but would be happy to discuss it in an interview.""",
+        expected_output="A short, first-person response. For normal questions, be extremely direct without conversational fluff. For abusive queries, output the exact rejection phrase. For greetings, return a formal greeting.",
         agent=proxy_agent,
     )
     
