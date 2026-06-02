@@ -3,14 +3,14 @@ from dotenv import load_dotenv
 from langchain_community.document_loaders import PyPDFLoader, TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.vectorstores import InMemoryVectorStore
-from langchain_community.embeddings import HuggingFaceInferenceAPIEmbeddings
+from langchain_huggingface import HuggingFaceEndpointEmbeddings
 
 load_dotenv()
 
 # Use remote HF embeddings to save 2GB of Vercel serverless function storage space
-embeddings = HuggingFaceInferenceAPIEmbeddings(
-    api_key=os.getenv("HF_TOKEN"),
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
+embeddings = HuggingFaceEndpointEmbeddings(
+    huggingfacehub_api_token=os.getenv("HF_TOKEN"),
+    model="sentence-transformers/all-MiniLM-L6-v2"
 )
 vector_store = InMemoryVectorStore(embedding=embeddings)
 

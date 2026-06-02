@@ -33,6 +33,7 @@ def create_proxy_agent():
         verbose=True,
         allow_delegation=False,
         cache=False,
+        temperature=1,
         llm="groq/llama-3.1-8b-instant" # litellm syntax automatically picks up GROQ_API_KEY
     )
 
@@ -47,9 +48,10 @@ def execute_crew_query(query: str, context: str) -> str:
         {context}
         
         Answer the recruiter's question thoroughly based ONLY on the context above. 
+        Start your answer IMMEDIATELY without any formal greetings (e.g., do not say 'Dear Recruiter', 'Hello', or 'I am delighted to share'). Be extremely direct and straightforward.
         If the answer is not in the context, politely state that you (as Abhishek) do not have that specific information readily available 
         but would be happy to discuss it in an interview.""",
-        expected_output="A professional, short, direct and crisp first-person response to the recruiter's question as Abhishek Yadav.",
+        expected_output="A short, extremely direct and crisp first-person response as Abhishek Yadav, starting immediately with the answer without any formal greetings or conversational fluff.",
         agent=proxy_agent,
     )
     

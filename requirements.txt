@@ -155,7 +155,9 @@ httpx-sse==0.4.3
     #   langchain-community
     #   mcp
 huggingface-hub==1.16.1
-    # via tokenizers
+    # via
+    #   langchain-huggingface
+    #   tokenizers
 idna==3.18
     # via
     #   anyio
@@ -215,12 +217,15 @@ langchain-core==1.4.0
     #   langchain-classic
     #   langchain-community
     #   langchain-groq
+    #   langchain-huggingface
     #   langchain-text-splitters
     #   langgraph
     #   langgraph-checkpoint
     #   langgraph-prebuilt
     #   langserve
 langchain-groq==1.1.2
+    # via backend
+langchain-huggingface==1.2.2
     # via backend
 langchain-protocol==0.0.16
     # via langchain-core
@@ -521,6 +526,7 @@ tokenizers==0.23.1
     # via
     #   chromadb
     #   crewai
+    #   langchain-huggingface
     #   litellm
 tomli==2.0.2
     # via
