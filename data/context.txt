@@ -1,0 +1,34 @@
+FullStack Software Engineer at Signzy
+-Where I worked on B2B fintech project of Two big Private banks, for customer onboarding to open current bank account for their businesses with nearly 5000, Relation Managers using the mobile application and a DIY B2C public platform for end customers. 
+- spending two years at singly gave me deep experience in Fintech business and bank banking sector and wholesome experience around software development, team management and client relations.
+- while my role was software engineer but I closely performed others roles with Quality Assurance, Business analyst and DevOps team as the someone from the team had been leaving the organisation in 6-8 months.
+- while I performed many deployments and fixed permanently many major bugs and edge cases in production, few of my major contribution were 
+a. Formatted the synchronous flow of account opening to asynchronous which reduced the total time to finish the process by nearly 60%
+b. Building DIY web platform from scratch and launching in production responsive on all devices mobile, tablets and desktops 
+c. Integrating DIY with SSO for third party service providers with SSO for Mobile and web applications.
+d. Setting up CI/CD for DIY Process. 
+e. Leading the team and facing client for BRD’s projection requirements and updates with deliverables being the longest resource on the client. 
+
+
+Senior Software Engineer Fulls-Sack at AccernAI
+
+- where I worked on B2B SaaS Data Platform enabling business to execute analysis over huge data either be it real time from news, blogs and social media or historical data from their own in house of AccernAI’s in store Databases and displaying final signals and reports on dashboards. 
+- through my time of 1 year I was owning release of features in and build for production deployment
+- restructures the broken authentication and authorisation module, role bases service endpoints for internal micro services and Gaines insights about role bases authentication.
+- optimised rendering of frontend components on dashboard with decoupling memoization and callbacks on dashboards. 
+- created internal tool to automate the retrieval of jira tickets merged in for reals between the previous deployed tag and current tags smoothing and reducing collaboration and efforts between QA and dev team over features and tickets discussion for testing post deployments
+- handled on call duties to monitor the production and fixed sever production pipeline failure and data issues. 
+- worked with data pipeline including critical infrastructure being like elastic search, redis, kibana, kafka, kubernetes  
+
+
+Founding Engineer at Atyourtime Technology
+
+- Joined Atyourtime Technology as Second Software Engineer and stepped on roles and responsibilities of Product owner who write and code, provisioned infrastructure on AWS automated with Terraform and make architectural decision for entire micro service architecture system.
+- actively interviewed and hired UI/UX designer and other software engineers.
+- lead the team of 7-8 engineers including UI/UX designer and established Scrum ceremonies and daily standup call to deliver by end of the two week sprint. 
+- documented the user stories and development, reviewed Pull request and mentoring other peers, plan for MVP version and launch planning
+- architected and developed Restaurant Micro-services for restaurant onboarding and menu management for strong consistency, low latency and high throughput and developed dashboard for Food Deliver Consumer App in development for showing demo to stakeholders and founders
+
+
+Masters At University Of Bath, 
+- Researched on traditional methods of information dissemination by local governing bodies it process and pros and cons of it to find gaps to enhance for effective and near real time for information dissemination to its general citizens and run awareness, medical and central campaign effectively specially in rural area to make people use government polls more effectively and for convenience and daily life important updates for urban public for law and policy enforcement. 
