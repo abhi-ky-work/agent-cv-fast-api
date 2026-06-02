@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  - type: web
+    name: agentcv-backend
+    env: python
+    buildCommand: "uv pip install -r backend/requirements.txt"
+    startCommand: "cd backend && uvicorn app.server:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.0
+      - key: GROQ_API_KEY
+        sync: false
+      - key: HF_TOKEN
+        sync: false
