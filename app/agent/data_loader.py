@@ -10,7 +10,7 @@ load_dotenv()
 # Use remote HF embeddings to save memory and storage on Render/Vercel
 embeddings = HuggingFaceEndpointEmbeddings(
     huggingfacehub_api_token=os.getenv("HF_TOKEN"),
-    model="sentence-transformers/all-MiniLM-L6-v2"
+    model="BAAI/bge-small-en-v1.5"
 )
 vector_store = InMemoryVectorStore(embedding=embeddings)
 
