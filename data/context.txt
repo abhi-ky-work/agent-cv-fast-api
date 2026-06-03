@@ -1,34 +1,453 @@
-FullStack Software Engineer at Signzy
--Where I worked on B2B fintech project of Two big Private banks, for customer onboarding to open current bank account for their businesses with nearly 5000, Relation Managers using the mobile application and a DIY B2C public platform for end customers. 
-- spending two years at singly gave me deep experience in Fintech business and bank banking sector and wholesome experience around software development, team management and client relations.
-- while my role was software engineer but I closely performed others roles with Quality Assurance, Business analyst and DevOps team as the someone from the team had been leaving the organisation in 6-8 months.
-- while I performed many deployments and fixed permanently many major bugs and edge cases in production, few of my major contribution were 
-a. Formatted the synchronous flow of account opening to asynchronous which reduced the total time to finish the process by nearly 60%
-b. Building DIY web platform from scratch and launching in production responsive on all devices mobile, tablets and desktops 
-c. Integrating DIY with SSO for third party service providers with SSO for Mobile and web applications.
-d. Setting up CI/CD for DIY Process. 
-e. Leading the team and facing client for BRD’s projection requirements and updates with deliverables being the longest resource on the client. 
-
-
-Senior Software Engineer Fulls-Sack at AccernAI
-
-- where I worked on B2B SaaS Data Platform enabling business to execute analysis over huge data either be it real time from news, blogs and social media or historical data from their own in house of AccernAI’s in store Databases and displaying final signals and reports on dashboards. 
-- through my time of 1 year I was owning release of features in and build for production deployment
-- restructures the broken authentication and authorisation module, role bases service endpoints for internal micro services and Gaines insights about role bases authentication.
-- optimised rendering of frontend components on dashboard with decoupling memoization and callbacks on dashboards. 
-- created internal tool to automate the retrieval of jira tickets merged in for reals between the previous deployed tag and current tags smoothing and reducing collaboration and efforts between QA and dev team over features and tickets discussion for testing post deployments
-- handled on call duties to monitor the production and fixed sever production pipeline failure and data issues. 
-- worked with data pipeline including critical infrastructure being like elastic search, redis, kibana, kafka, kubernetes  
-
-
-Founding Engineer at Atyourtime Technology
-
-- Joined Atyourtime Technology as Second Software Engineer and stepped on roles and responsibilities of Product owner who write and code, provisioned infrastructure on AWS automated with Terraform and make architectural decision for entire micro service architecture system.
-- actively interviewed and hired UI/UX designer and other software engineers.
-- lead the team of 7-8 engineers including UI/UX designer and established Scrum ceremonies and daily standup call to deliver by end of the two week sprint. 
-- documented the user stories and development, reviewed Pull request and mentoring other peers, plan for MVP version and launch planning
-- architected and developed Restaurant Micro-services for restaurant onboarding and menu management for strong consistency, low latency and high throughput and developed dashboard for Food Deliver Consumer App in development for showing demo to stakeholders and founders
-
-
-Masters At University Of Bath, 
-- Researched on traditional methods of information dissemination by local governing bodies it process and pros and cons of it to find gaps to enhance for effective and near real time for information dissemination to its general citizens and run awareness, medical and central campaign effectively specially in rural area to make people use government polls more effectively and for convenience and daily life important updates for urban public for law and policy enforcement. 
+﻿# SIGNZY — WORK CONTEXT FOR AI AGENT
+## Company Overview
+I joined Signzy in July 2020, right after my graduation. Signzy is a B2B 
+FinTech company whose core product is a suite of APIs for financial 
+institutions — covering background checks, ID verification, data 
+validation, company verification, VKYC (Video KYC), and CKYC (Central 
+KYC). Their clients are primarily banks and financial organisations in 
+India who need compliant, automated customer onboarding and identity 
+verification infrastructure.
+## My Role and Team
+I joined as a Software Engineer on a custom project team building 
+solutions for two major Indian private banks — Axis Bank and IndusInd 
+Bank. I worked there for two years, from July 2020 to June 2022, and 
+over that time my responsibilities evolved significantly. Within the 
+first six months, due to early departures of senior team members, I 
+became the longest-tenured resource on the team and naturally stepped 
+into a technical lead role — working directly with Business Analysts, 
+Programme Managers, QA engineers, and the deployment team, and stepping 
+into their responsibilities when required.
+## What I Was Building
+The primary project was a customer onboarding platform for business 
+entities — LLPs, private limited companies, and other business 
+structures — looking to open current bank accounts with Axis Bank and 
+IndusInd Bank. The platform collected:
+- Identity documents of business owners and directors
+- Address details and nominee information
+- Business registration documents
+- All compliance data required by the bank to approve a current account 
+  opening
+The platform operated at significant scale — around 4,000 to 5,000 
+users from within the banking organisations themselves, plus an 
+additional customer-facing DIY platform open to the public. We 
+integrated with multiple third-party FinTech vendors, which added 
+further traffic and complexity. I witnessed the application grow 
+rapidly, break at scale in production, and learned how to fix it 
+permanently — some of the most valuable engineering experience I have.
+---
+## Major Technical Contributions
+### 1. Async Workflow Rewrite — 60% Reduction in Process Time
+One of my most impactful contributions was rewriting the account opening 
+workflow from a blocking synchronous flow to a fully asynchronous 
+architecture. The original process was taking approximately 7 minutes 
+end-to-end to complete a current account opening. After the rewrite, 
+the same process completed in 3 to 3.5 minutes — a reduction of 
+roughly 60%. This directly improved both the user experience for 
+relationship managers using the internal tool and the completion rate 
+for customers on the DIY platform.
+The core issue was that each step in the onboarding flow was waiting 
+for the previous step to resolve before proceeding — database writes, 
+third-party API calls, document validations — all were chained 
+synchronously. I decoupled these into parallel async workflows 
+wherever the steps were independent, used queuing for steps that had 
+to be ordered, and eliminated unnecessary blocking I/O throughout the 
+process.
+### 2. DIY Platform — Technical Ownership from Development to Production
+After approximately one year at Signzy, I took complete technical 
+ownership of a parallel project — the DIY onboarding platform. This 
+was a self-serve version of the internal relationship manager tool, 
+designed so that business customers could directly initiate and 
+complete their current account opening without needing a bank 
+relationship manager to facilitate it.
+I led this platform from active development through UAT (User 
+Acceptance Testing) and all the way to its production launch. This 
+involved coordinating with QA teams, managing deployment pipelines, 
+aligning with the client bank's compliance and technical teams, and 
+resolving blockers across the delivery lifecycle. It was my first 
+experience owning a product end-to-end and seeing it go live.
+### 3. VKYC and CKYC Integration
+One of the most complex integrations I worked on was connecting both 
+the internal RM tool and the DIY platform with third-party VKYC (Video 
+KYC) and CKYC (Central KYC) providers. 
+VKYC is a live video-based process where a bank officer verifies the 
+identity and documents of a customer in real time. CKYC is a 
+centralised government-backed KYC repository for India where a 
+customer's KYC data is stored once and reused across financial 
+institutions.
+The integration involved transferring the customer from our platform 
+to a third-party vendor via SSO, completing the KYC process on the 
+vendor's system, and receiving the verified status back into our 
+application to proceed with the account opening. Coordinating the 
+session handoff, handling failure states, managing token expiry, and 
+ensuring compliance with the regulatory requirements of the integration 
+were the core engineering challenges here.
+### 4. Database Indexing and Root Cause Analysis — 85-90% Failure 
+    Rate Reduction
+As the platform scaled, we started experiencing recurring database 
+failures that were causing account opening processes to fail mid-flow. 
+This was happening in production, affecting real users at real banks, 
+which meant the pressure to identify and fix the root cause was high.
+I led the root cause analysis. The investigation revealed that several 
+high-frequency queries were running without the appropriate indexes — 
+as data volume grew, these queries were doing full table scans and 
+timing out. We had not anticipated the query patterns at the volume we 
+were operating at.
+The fix involved identifying every under-indexed query across the 
+critical onboarding path, designing and implementing targeted database 
+indexes, and validating that failure rates dropped. The result was an 
+85 to 90% reduction in process failure rates. This experience taught 
+me how applications break at scale in ways that are invisible at low 
+volume — and how to diagnose and fix them systematically rather than 
+reactively.
+---
+## What I Learned at Signzy
+**Scale and production ownership** — I watched an application go from 
+small team usage to thousands of concurrent users from banking 
+organisations, plus public traffic. I saw what breaks, why it breaks, 
+and how to fix it permanently.
+**Stepping up beyond your title** — I joined as a software engineer 
+and ended up as the de facto technical lead, sole point of contact for 
+two banking clients simultaneously, mentoring junior developers, and 
+coordinating with PMs, BAs, and QA. The title didn't change but the 
+responsibility did — and I embraced it.
+**Regulated FinTech delivery** — working directly with Axis Bank and 
+IndusInd Bank taught me how to operate in a compliance-first 
+environment where delivery timelines are commitments, not estimates, 
+and where client trust is earned through consistent delivery and 
+transparent communication.
+**Async architecture and performance engineering** — the workflow 
+rewrite gave me deep practical knowledge of how synchronous bottlenecks 
+kill user experience at scale and how to systematically identify and 
+eliminate them.
+---
+## Likely Recruiter Questions and Answer Anchors
+**Q: Why did you leave Signzy after two years?**
+I had spent two years and grown significantly — from software engineer 
+to effectively running the technical delivery for two major banking 
+clients. I wanted to take on a role with a higher technical bar and 
+exposure to cutting-edge technology. I took a deliberate break to 
+evaluate the right next opportunity rather than jumping to the first 
+offer.
+**Q: What was the most challenging technical problem you solved?**
+The database failure investigation at scale. We had a live production 
+system breaking for real bank users and no obvious cause. I led the 
+root cause analysis, identified missing indexes as the core issue, 
+implemented the fix, and reduced failure rates by 85 to 90%. It taught 
+me how scale reveals problems that are invisible in development.
+**Q: Have you worked with regulated clients?**
+Yes — Axis Bank and IndusInd Bank were my direct clients. I was the 
+sole technical point of contact for both simultaneously. I sat in 
+client meetings, gathered requirements directly from the bank, 
+committed to delivery timelines, and was accountable for what we 
+shipped.
+**Q: What is VKYC and CKYC?**
+VKYC is Video KYC — a live video-based identity verification process 
+mandated by RBI for digital bank account opening in India. CKYC is 
+Central KYC — a government-backed centralised repository where a 
+customer's KYC data is stored once and shared across financial 
+institutions, eliminating repeat verification. I integrated both into 
+our onboarding platform via third-party FinTech providers.
+**Q: Did you have any leadership experience at Signzy?**
+Yes — after about six months, senior team members left and I became 
+the longest-tenured resource. I stepped into a technical lead role 
+organically — managing the team, mentoring junior engineers, owning 
+deployments, leading client communications, and eventually taking 
+complete ownership of the DIY platform from development through 
+production launch.
+# ACCERNAI — WORK CONTEXT FOR AI AGENT
+## Company Overview
+AccernAI is a B2B enterprise SaaS company headquartered in New York,
+which has raised $40M in funding and is recognised by Gartner in their
+2023 Hype Cycle for Data Science, Machine Learning, and Emerging
+Technologies in Banking. The platform is a no-code NLP research and
+analytics solution that enables enterprises — primarily in financial
+services and government — to process real-time and historical data from
+across the web: news, blogs, social media, and proprietary in-house
+datasets.
+Clients like UniCredit, Mizuho Bank, and Interactive Brokers use the
+platform to build and run data pipelines that surface analytical
+insights for investment decisions, risk monitoring, and operational
+intelligence. The platform is powered by xNAI — AccernAI's proprietary
+data engine — which aggregates billions of rows of public data and
+provides pre-built taxonomies and over 50,000 classification models for
+financial and government use cases.
+## Why I Joined
+After two years at Signzy working on a project I had grown very
+comfortable with, I wanted to move into a more technically ambitious
+environment — one where I could work with cutting-edge technology,
+modern architecture, and a product that was genuinely at the frontier
+of AI and data engineering. I took a deliberate career break to
+evaluate the right opportunity and joined AccernAI as a Senior Software
+Engineer in November 2022.
+## My Role
+I joined as a Senior Full-Stack Engineer working across the platform's
+frontend, backend services, and infrastructure. Over my tenure I grew
+from contributing to individual service endpoints and UI components
+into owning the full staging release lifecycle and leading production
+deployments and hotfix resolutions.
+## What the Product Does
+The AccernAI platform gives enterprise users a structured workflow to:
+1. Select and connect data sources — news, blogs, social media, or
+   their own proprietary datasets
+2. Choose from pre-built taxonomies and NLP classification models
+3. Configure and launch data pipelines using custom resource
+   definitions (CRDs on Kubernetes)
+4. Monitor pipeline execution
+5. View processed analytical output on a dashboard for research and
+   decision-making
+The architecture was microservices-based, running on Kubernetes with
+Kafka for event streaming, Redis for caching, and GraphQL as the API
+layer between services. Observability was handled through Grafana and
+Loki for log aggregation, and deployments were managed via Argo CD.
+---
+## Major Technical Contributions
+### 1. Authentication and Authorisation Overhaul
+When I joined, the platform had a critically broken authentication
+module that was causing service endpoints to behave incorrectly under
+certain access conditions. I owned the end-to-end investigation and
+resolution of this.
+The core issue was that inter-service API tokens were using symmetric
+encryption, which posed a security risk and was not appropriate for a
+platform handling sensitive financial data for regulated institutions.
+I transitioned the token encryption from symmetric to RSA-based
+asymmetric encryption, implemented graceful error handling throughout
+the auth flow, and enabled role-based access control across all GraphQL
+service endpoints.
+Before moving this to production I validated 90% of functionality
+across the affected endpoints. I then personally managed the on-call
+for the following deployment — monitoring through Grafana and Argo CD,
+watching logs and service health in real time to ensure nothing
+regressed. This was my first major production deployment at AccernAI
+and the experience that led to me taking full ownership of the staging
+release lifecycle going forward.
+**Technical challenge:** The tricky part was that the broken auth
+module was not failing loudly — it was failing silently in certain
+role combinations, causing permissions to behave inconsistently
+depending on how the token was issued. Finding all the edge cases
+required tracing through the GraphQL resolvers systematically and
+testing each role combination explicitly before the release.
+### 2. UI Performance Optimisation — Lighthouse Score 70 to 90
+The platform's dashboards were data-heavy — displaying processed
+outputs from large NLP pipelines, list views of models, taxonomies,
+and pipeline results. Several pages had significant performance issues
+causing slow load times and poor user experience.
+I conducted a systematic performance audit using Lighthouse and
+identified two categories of problems:
+**Excessive render cycles** — components were re-rendering
+unnecessarily on state changes that did not affect them. I refactored
+these using component decoupling and targeted React hook optimisation
+(useMemo, useCallback, React.memo where appropriate), improving
+component visibility speed by 80% as validated by Lighthouse.
+**Redis cache handling** — several sections of the UI were making
+calls that depended on Redis-cached responses. When the cache was cold
+or a key was missing, the application was surfacing raw errors to the
+user instead of handling the state gracefully. I decoupled these
+components and implemented proper loading states and fallback handling,
+so users experienced a clean degraded state rather than broken UI when
+cache responses were absent.
+The overall Lighthouse performance score across affected pages went
+from 70 to 90 as a result of these changes combined.
+### 3. QA Release Automation CLI Tool
+I noticed a recurring friction point between developers and QA
+engineers during release cycles. Every time a deployment was prepared,
+QA had to manually chase developers to find out what had moved into the
+release, which Jira tickets were included, what endpoints had changed,
+and what needed to be tested. This back-and-forth was happening through
+Slack threads and was slowing down the pre-production validation
+process.
+I built an internal CLI tool that automated this entirely. The tool
+compared the previous deployed Git tag to the current deployment tag,
+extracted all commits in between, mapped them to their associated Jira
+tickets, and categorised them as features or bug fixes. The output was
+a structured release summary — Jira tickets, descriptions, and affected
+areas — that QA could use directly to plan and execute their
+pre-production testing.
+This eliminated the communication overhead entirely. QA could now open
+the tool output, see exactly what moved to the environment, navigate
+directly to the relevant Jira tickets, and begin testing immediately.
+### 4. Staging Release and Hotfix Ownership
+Over the course of my tenure I progressively took on more ownership of
+the release process. By the time I left I was fully responsible for the
+staging deployment lifecycle — coordinating deployments, monitoring
+services post-deployment through Grafana and Argo CD, and triaging any
+issues that surfaced.
+I led the resolution and production deployment of 6 hotfixes during
+my time at AccernAI. Each hotfix required identifying the root cause
+under time pressure, validating the fix in staging, coordinating the
+release, and monitoring production to confirm stability. Managing
+hotfixes in a microservices environment means understanding how
+services interact — a fix in one service can surface unexpected
+behaviour in another if the dependencies are not well understood.
+### 5. OpenAI API Integration
+I integrated the OpenAI API into the platform to enable clients to
+query and interact with their analytical data through natural language.
+This allowed users to ask questions directly against their processed
+pipeline outputs and receive contextual answers — extending the
+platform's analytical capability with conversational AI on top of the
+existing NLP infrastructure.
+### 6. Test Coverage Ownership
+I inherited a frontend E2E test suite at 48% Cypress coverage. I
+maintained strict TDD discipline across all new feature development,
+kept code coverage and code smell aligned with SonarQube thresholds,
+and raised the Cypress coverage to over 80% by the time I left —
+nearly doubling the test reliability of the frontend.
+---
+## Architecture and Technology I Worked With
+- **Frontend:** React, TypeScript, GraphQL (client)
+- **Backend services:** Node.js microservices communicating over
+  GraphQL
+- **Event streaming:** Kafka for data pipeline orchestration
+- **Caching:** Redis for API response caching
+- **Infrastructure:** Kubernetes with custom resource definitions for
+  pipeline configuration, AWS for cloud hosting
+- **CI/CD:** Argo CD for deployment management
+- **Observability:** Grafana and Loki for log aggregation and service
+  monitoring
+- **Security:** RSA asymmetric encryption, role-based access control
+  over GraphQL endpoints, JWT
+---
+## What I Learned at AccernAI
+**Production ownership and observability** — managing deployments and
+on-calls taught me that shipping code is only half the job. Watching
+services in production through Grafana, understanding what normal looks
+like, and recognising anomalies early is the other half. This is where
+I developed real depth in observability tooling.
+**Microservices at scale** — seeing how Kafka, Redis, Kubernetes, and
+GraphQL worked together in a live data-processing product gave me
+architectural intuition I could not have gained from reading. I
+understood how data flows through a distributed system, where it can
+stall or fail, and how to trace it.
+**Infrastructure and DevOps depth** — AccernAI was where I got
+seriously interested in infrastructure provisioning on AWS with
+Terraform and Kubernetes. Watching how the platform's infrastructure
+was managed sparked the interest I later pursued as Founding Engineer
+at Atyourtime.
+**Performance engineering as a discipline** — the Lighthouse audit
+work taught me to treat performance as something you measure and
+engineer systematically, not something you optimise reactively when
+users complain.
+**AI/NLP product domain** — working on a platform that processed
+real-time financial intelligence for institutions like UniCredit and
+Mizuho Bank gave me deep understanding of what enterprise AI products
+look like in practice — the data pipelines, the model orchestration,
+the UI that surfaces insights to analysts.
+---
+## Likely Recruiter Questions and Answer Anchors
+**Q: Why did you leave AccernAI after one year?**
+AccernAI was acquired by Wand AI during my tenure. Combined with
+wanting to pursue a founding-level opportunity where I could own
+infrastructure and team building end-to-end, I decided to move on
+after a strong year of delivery. The timing aligned with the
+Atyourtime opportunity in London which matched exactly what I was
+looking for.
+**Q: Tell me about a security challenge you faced.**
+The auth overhaul at AccernAI was the most significant. I inherited a
+broken authentication module that was silently failing for certain role
+combinations. I diagnosed the root cause, transitioned the encryption
+from symmetric to RSA asymmetric, implemented role-based access control
+across all GraphQL endpoints, validated 90% of functionality before
+release, and managed the production deployment personally through the
+on-call. Nothing regressed.
+**Q: What is your experience with observability and monitoring?**
+At AccernAI I used Grafana and Loki as my primary observability tools.
+I learned to use them not just reactively during incidents but
+proactively — watching service health, response patterns, and log
+volumes after every deployment. Managing 6 hotfix deployments and
+owning the staging release lifecycle gave me solid practical experience
+with what production monitoring actually looks like day to day.
+**Q: Have you worked with Kafka or event-driven architecture?**
+At AccernAI, Kafka was central to how the data pipelines were
+orchestrated — events flowing between microservices to trigger
+processing stages. I worked with it in the context of a live
+production data platform processing financial intelligence for
+institutional clients. I deepened this further at Atyourtime where
+I architected event-driven microservices from scratch.
+**Q: What is your experience with AI or NLP products?**
+AccernAI was a Gartner-recognised NLP platform processing real-time
+financial data for clients like UniCredit and Mizuho Bank. I worked
+across the full stack of that product — from the UI that analysts
+used to surface insights, to the backend services that powered the
+data pipelines, to integrating OpenAI's API to add conversational
+querying on top of the analytical output. It gave me deep familiarity
+with what enterprise AI products look like in production.
+**Q: What was your biggest UI challenge there?**
+The performance audit. The dashboards were data-heavy and several
+pages had Lighthouse scores around 70 — causing real slowness for
+analysts working with large datasets. I systematically identified
+excessive render cycles, decoupled components, optimised React hooks,
+and fixed Redis cache error handling. The score went from 70 to 90
+and component visibility speed improved by 80%. The key was treating
+it as an engineering problem with measurable outcomes, not just
+a vague "make it faster" task.
+ATYOURTIME TECHNOLOGY — WORK CONTEXT FOR AI AGENT
+Company Overview
+I joined Atyourtime Technology in August 2025, immediately after graduating with my Master’s degree in Computer Science from the University of Bath. Atyourtime is an early-stage B2B SaaS and B2C startup based in London operating in the last-mile delivery and logistics space. The company's core value proposition revolves around a proprietary, patented "Tag & Scan" technology designed to make shipments completely secure and tamper-proof.
+The primary business objective during my tenure was to build a working, highly secure delivery model to validate this idea within the food delivery industry, providing white-label platform solutions to restaurants, franchises, and other last-mile logistics sectors (such as legal and pharmaceuticals).
+My Role and Team
+I joined as the Founding Software Engineer. When I started, the engineering department had no defined technical structure, processes, or engineering team members. I immediately stepped up to establish the engineering foundation from scratch. Over my 5 months there, I translated high-level business requirements into actionable technical maps and actively built out the team.
+I led 70% of the hiring interviews, directly recruiting 5 engineers and growing a cross-functional engineering team of 8 (spanning backend, frontend, mobile, and UI/UX). I acted as the core technical liaison between the founders/stakeholders and the development team, establishing Agile methodologies, setting up Scrum ceremonies, leading daily standups, and mentoring developers to elevate their skills.
+What I Was Building
+We built a highly scalable, real-time event-driven microservices platform designed to support secure, low-latency last-mile logistics. The core of the platform was a multi-subsidiary architecture capable of handling heavy throughput. The primary focus was the Restaurant Module, which served as the engine of customer and business engagement. This module handled restaurant onboarding, franchise menu management at scale, real-time checkout bucket creation, payment processing, and dynamic geolocation tracking to look for and assign deliveries to nearby drivers.
+Major Technical Contributions
+1. Enterprise-Grade Cloud Architecture & Infrastructure from Scratch
+As the Founding Engineer, I was entirely responsible for architecting, provisioning, and securing the platform's cloud footprint. I built an enterprise-grade infrastructure on AWS utilizing EC2, ECS, Fargate, S3, CloudFront, VPC, IAM, SES, API Gateway, Lambda, and DynamoDB.
+* Infrastructure as Code (IaC): I automated the provisioning of the entire architecture end-to-end using Terraform, ensuring environment reproducibility and eliminating manual configuration drift. 
+* CI/CD Pipelines: I established robust automation workflows across all core repositories. This setup allowed the newly hired cross-functional team to ship code reliably, laying down the foundational multi-subsidiary layer from day one. 
+2. High-Throughput Restaurant & Menu Management Module
+I personally developed the core of the customer-facing platform, delivering 60% of the overall customer application. The crown jewel was a microservice built to manage menus and onboarding profiles for massive restaurant franchises.
+* The Challenge: If a single franchisee managed 1,000 different store locations, the system needed to serve menu requests and process order state changes under high traffic with strong API consistency and minimal latency. 
+* The Solution: I architected the service with high-throughput API designs, implementing optimal database access patterns and tight concurrency controls. This microservice successfully tied together checkout, payments, and driver dispatch workflows smoothly. 
+3. Identity and Access Management via AWS Cognito
+Because the application functions as both a B2B white-label platform for businesses and a B2C application for customers and drivers, securing access control was critical.
+* I designed and implemented platform-wide authentication and authorization schemas using AWS Cognito. 
+* This secured customer checkout portals, driver workflows, and restaurant management portals, ensuring strict role-based isolation across multi-tenant subsidiaries. 
+4. Agentic AI & Modern Code Optimization Engineering
+Faced with tight startup timelines, I pioneered the integration of Generative AI tools within our software development lifecycle.
+* I collaborated with the founders to translate business goals into functional requirements, using LLM-based agentic assistants to rapidly generate detailed product documentation, User Stories, and Use Cases. 
+* I defined the organization's code review protocols and code development strategies, incorporating agentic AI assistance (utilizing tools like Cursor, Claude Code, and Copilot) to accelerate feature development without compromising production-grade standards. 
+What I Learned at Atyourtime Technology
+Founding Engineer Autonomy — I learned how to turn ambiguity into architecture. Stepping into a room with zero lines of code and transforming a patent idea into a working cloud infrastructure, a structured team, and a shipping product taught me true end-to-end technical ownership.
+Team Building and Technical Leadership — Leading 70% of the interviews and managing an 8-person cross-functional team taught me how to spot engineering talent and align diverse workstreams (backend, frontend, mobile, UI/UX) to a unified roadmap.
+Advanced DevSecOps and Infrastructure Mastery — Writing pure production Terraform modules and mapping out complex multi-tenant AWS ecosystems gave me deep infrastructure intuition. I learned how to build systems securely with strict compliance from day zero.
+AI-Accelerated Engineering — This role solidified my belief in the power of Agentic AI. By leveraging LLMs for documentation, task splitting, and feature writing, I learned how to significantly compress development cycles—a skill set I chose to deepen even further after my departure.
+Why I Left Atyourtime Technology
+I spent five highly successful months building the core platform architecture and assembling the engineering team from the ground up. However, due to the early-stage startup's financial strategy shifting to a deferred-salary, equity-only compensation model, I had to step away to secure my financial commitments.
+I deliberately leveraged this transition period to completely immerse myself in the next frontier of engineering—dedicating my time to deep-diving into generative AI architectures, building complex RAG pipelines, training autonomous agents via frameworks like CrewAI/LangGraph, and engineering full-scale applications like AgentCV.
+Likely Recruiter Questions and Answer Anchors
+Q: Why did you leave your Founding Engineer role after 5 months? I successfully delivered the core architecture, built out the initial cloud infrastructure, and hired the engineering team from scratch. However, as an early-stage startup, the company transitioned to a deferred-salary, equity-only compensation structure. To meet my financial responsibilities, I made the conscious decision to step away. I channeled that time into mastering Generative AI and Agentic development, which led directly to creating advanced AI proxy agent projects like AgentCV.
+Q: How did you scale menu management for a franchise with thousands of stores? The challenge lay in balancing high traffic, low latency, and strong API consistency. I designed the Restaurant Microservice to break down menu entities into highly optimized read models. By implementing event-driven updates, utilizing efficient caching strategies, and designing clean asynchronous boundaries, we ensured that when a large franchise updated an item across 1,000 stores, the change propagated reliably without causing full table locks or breaking checkout, payment, or driver-allocation APIs.
+Q: You mentioned building a team. How did you handle hiring with no initial technical structure? When I joined, there was no engineering team. I sat down with the founders, mapped out our product roadmap, and defined the exact skill sets required across the stack. I built the interviewing loops from scratch, conducted 70% of the interviews, and directly hired 5 engineers to quickly form a high-performing, cross-functional team of 8. I then instituted Agile practices and daily standups to maintain clear velocity.
+Q: How did you leverage AI in your development workflow at Atyourtime? We used Agentic AI as a force multiplier. I used LLM assistants to help translate raw stakeholder ideas into high-quality User Stories and technical documentation. On the codebase level, we established strict code review protocols but encouraged developers to use tools like Cursor and Copilot to accelerate routine feature implementation. This allowed an 8-person team to ship a highly complex multi-subsidiary logistics system at a fraction of the traditional development time.
+AGENTCV — PROJECT CONTEXT FOR AI AGENT
+Project Overview
+AgentCV was born out of a practical, real-world challenge I was facing firsthand: managing recruiter inquiries and consistently delivering high-quality, contextual details about my technical background. To solve this, I built an autonomous, conversational AI Proxy Agent designed to act as a virtual interviewer. Recruiters can interact with a live chat window to ask questions about my previous organization choices, work experiences, projects, and technical challenges. The agent dynamically answers in the first person, operating exactly like an AI proxy of myself.
+The platform is fully live, open-source, and powered by a high-performance backend architecture designed to eliminate hallucinations by grounding response logic strictly within my unstructured professional data.
+Technical Architecture & Implementation
+To build a system capable of production-grade conversational accuracy, I engineered a low-latency Retrieval-Augmented Generation (RAG) pipeline from scratch:
+* Foundational Learning: Before constructing the agent, I deep-dived into the evolution of machine learning—tracing the lineage from foundational neural networks (ANNs, RNNs) to modern Transformers and Large Language Models—to master how to ground generative AI outputs effectively. 
+* Agentic Frameworks & Guardrails: I built the core agent utilizing advanced generative AI frameworks, including CrewAI and LangChain, to orchestrate domain-specific conversational logic and strictly maintain the persona of an AI interview proxy. 
+* Vector Infrastructure & Embeddings: I designed an optimized retrieval mechanism using Hugging Face to generate mathematical embeddings from my raw professional data. These high-dimensional vectors are stored and indexed in a specialized vector database (FAISS / ChromaDB) to support semantic chunking and high-accuracy context retrieval. 
+* Context Isolation Layer: The RAG pipeline separates data ingestion into two strict streams: my raw CV and a highly detailed, comprehensive context file detailing the exact technical challenges and deep-dive resolutions from my past roles. 
+* High-Performance Inference: To ensure immediate, human-like response speeds in the chat interface, I hooked the backend framework up to Groq’s LPU (Language Processing Unit) inference engine. Utilizing hardware-accelerated GPU/LPU inferencing allows the LLM (Llama 3.1) to process data chunks and output answers with ultra-low latency. 
+TIKITU — PROJECT CONTEXT FOR AI AGENT
+Project Overview
+TikiTu is a comprehensive, production-grade DevOps and Full-Stack project engineered to demonstrate advanced system design patterns, cloud infrastructure provisioning, and microservices architecture. The application is a highly scalable, live online event-ticketing platform where organizers can list events and customers can browse, select, and securely purchase tickets.
+The primary engineering goal of TikiTu was to build a clean, multi-tenant enterprise-grade system from scratch, explicitly demonstrating how distinct business modules scale, communicate, and deploy in an isolated, cloud-native ecosystem.
+Technical Architecture & Functional Modules
+The application abandons monolithic structures in favor of a strictly decoupled, event-driven microservices architecture:
+* Multi-Platform Flow: The system is split cleanly into dedicated frontends (a Next.js web platform and a React Native cross-platform mobile application) that communicate seamlessly with isolated backend services managed via Nest.js and TypeScript. 
+* Decoupled Microservices: The backend is segmented into specialized domain services, including:
+   * Partner Microservice: Tailored for event organizers to register franchises, list events, and manage inventory. 
+   * User/Customer Microservice: Optimized for high-throughput browsing, search, and checkout bucket creation. 
+   * Payment Microservice: An isolated service handling transactional states, secure handoffs, and webhooks. 
+   * Routing & Notification Microservices: Managing internal event-driven communication and push notification delivery. 
+* Identity & Access Management: I implemented robust platform-wide authentication and authorization utilizing AWS Cognito, separating user-facing access tokens from internal partner-administration roles. 
+* Infrastructure as Code (IaC): The entire cloud footprint is fully automated. I used Terraform to provision and configure enterprise AWS infrastructure, orchestrating containers across AWS ECS (Elastic Container Service) and Fargate. 
+* Data Layer: Each microservice maintains state using its own optimized PostgreSQL database instance, preserving the database-per-service pattern required for true operational isolation at scale. 
+Next-Generation Engineering Workflows
+TikiTu also served as an active testing ground for advanced developer velocity. I heavily leveraged cutting-edge Agentic AI development environments—including Cursor and Claude Code. By treating AI agents as collaborative partners to automate boilerplate generation, run inline terminal refactoring, and quickly map out API routing schemas, I mastered how to compress iterative cycles and ship complex enterprise features rapidly.
+Likely Recruiter Questions and Answer Anchors
+Q: What inspired you to build AgentCV, and how does it prevent hallucinations? I built AgentCV to solve a personal bottleneck: answering highly repetitive recruiter inquiries about my past technical projects and architecture decisions. To ensure it never invents details, I built a strict RAG pipeline using LangChain and CrewAI. The LLM doesn't guess; it is bounded by a vector database containing semantic chunks of my actual CV and a highly specific context file. If a question falls outside that data, prompt guardrails instruct the agent to gracefully redirect, ensuring 100% factual alignment.
+Q: Why did you choose Groq and Hugging Face for the AgentCV project? In an interview context, chat latency kills the user experience. Traditional cloud API inferences can take several seconds to stream a response. By routing the pipeline through Groq's LPU inference engine, I achieved near-instantaneous token generation speeds. I paired this with Hugging Face models to create dense, mathematically accurate embeddings locally before saving them into the vector store, proving that you can build high-performance AI applications cost-effectively without relying on generic, blocking APIs.
+Q: What was the architectural rationale behind the microservices split in TikiTu? In an event platform, user browsing traffic scales completely differently from ticket purchasing or partner updates. If a major event drops, thousands of users hit the browsing and payment endpoints simultaneously. By decoupling the platform into Next.js/Nest.js microservices hosted on AWS ECS Fargate, we can scale the User and Payment services independently under heavy load without degrading performance for partners managing their events in the background.
+Q: How did you approach DevOps and infrastructure automation for TikiTu? I treated infrastructure as a core component of the software development lifecycle, not an afterthought. I wrote modular Terraform scripts to provision the entire AWS ecosystem from scratch—setting up secure VPCs, IAM roles, API Gateways, ECS clusters, and Cognito pools. This ensures that the entire enterprise-grade environment can be brought up, modified, or torn down with a single command, eliminating manual configuration errors completely.
